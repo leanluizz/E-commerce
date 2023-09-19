@@ -1,0 +1,25 @@
+@keyframes slideToRight {
+    0%{ left: -100%; }
+    50% { left: 0%; }
+    60% { left: 0%; }
+    70% { left: 0%; }
+    80% { left: 0%; }
+    100%{ left: 0%; }
+}
+@keyframes slideToLeft {
+    0%{ left: 0%; }
+    100% { left: -100%; }
+}
+.errorNull{ left: -100%; }
+.errorOFF{ 
+    left: -500px;
+    animation: slideToLeft 3s forwards;
+}
+.error{ 
+    left: -100%;
+    transition-timing-function: ease-out;
+    animation: slideToRight 3s forwards;
+ }
+#x:hover{
+    fill: rgb(97, 7, 7);
+}
