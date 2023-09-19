@@ -1,20 +1,9 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/api/forgotedPasswd": "pages/api/forgotedPasswd.js",
-  "/api/authentication": "pages/api/authentication.js",
-  "/api/changepasswd": "pages/api/changepasswd.js",
-  "/api/hello": "pages/api/hello.js",
+  "/_document": "pages/_document.js",
+  "/register": "pages/register.js",
+  "/login": "pages/login.js",
   "/api/showData": "pages/api/showData.js",
-  "/api/uploadImages": "pages/api/uploadImages.js",
-  "/api/sql": "pages/api/sql.js",
-  "/forgot-your-password": "pages/forgot-your-password.html",
-  "/changePasswd": "pages/changePasswd.html",
-  "/api/verifyCode": "pages/api/verifyCode.js",
-  "/": "pages/index.html",
-  "/login": "pages/login.html",
-  "/register": "pages/register.html",
-  "/registered": "pages/registered.html",
-  "/404": "pages/404.html"
+  "/": "pages/index.js"
 }

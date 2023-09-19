@@ -3,7 +3,6 @@ import { sql } from '@vercel/postgres'
 import pg from 'pg';
 import nodemailer from 'nodemailer'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios';
 
 export default async function handler(
   req: NextApiRequest,

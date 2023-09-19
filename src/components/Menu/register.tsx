@@ -66,7 +66,7 @@ if (process.browser) {
 <form action={'/api/sql'} onSubmit={Submit}>
 <div className="mb-3">
     <label htmlFor="name" className="form-label text-light">Name</label>
-    <input placeholder='Name' onChange={handleInput} type="text" className="input-register form-control" name="name" id="name" aria-describedby="emailHelp" />
+    <input placeholder='Name' maxLength={10} onChange={handleInput} type="text" className="input-register form-control" name="name" id="name" aria-describedby="emailHelp" />
   </div>
   <div className="mb-3">
     <label htmlFor="email" className="form-label text-light">Email address</label>
