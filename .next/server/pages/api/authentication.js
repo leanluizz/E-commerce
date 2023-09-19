@@ -1,145 +1,180 @@
 "use strict";
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/api/authentication";
-exports.ids = ["pages/api/authentication"];
+exports.id = 178;
+exports.ids = [178];
 exports.modules = {
 
-/***/ "bcrypt":
-/*!*************************!*\
-  !*** external "bcrypt" ***!
-  \*************************/
+/***/ 7096:
 /***/ ((module) => {
 
 module.exports = require("bcrypt");
 
 /***/ }),
 
-/***/ "cookie":
-/*!*************************!*\
-  !*** external "cookie" ***!
-  \*************************/
+/***/ 4802:
 /***/ ((module) => {
 
 module.exports = require("cookie");
 
 /***/ }),
 
-/***/ "dotenv-safe":
-/*!******************************!*\
-  !*** external "dotenv-safe" ***!
-  \******************************/
+/***/ 9948:
 /***/ ((module) => {
 
 module.exports = require("dotenv-safe");
 
 /***/ }),
 
-/***/ "jsonwebtoken":
-/*!*******************************!*\
-  !*** external "jsonwebtoken" ***!
-  \*******************************/
+/***/ 9344:
 /***/ ((module) => {
 
 module.exports = require("jsonwebtoken");
 
 /***/ }),
 
-/***/ "../../../api-utils/node":
-/*!*****************************************************!*\
-  !*** external "next/dist/server/api-utils/node.js" ***!
-  \*****************************************************/
+/***/ 730:
 /***/ ((module) => {
 
 module.exports = require("next/dist/server/api-utils/node.js");
 
 /***/ }),
 
-/***/ "../route-module":
-/*!************************************************************************!*\
-  !*** external "next/dist/server/future/route-modules/route-module.js" ***!
-  \************************************************************************/
+/***/ 3076:
 /***/ ((module) => {
 
 module.exports = require("next/dist/server/future/route-modules/route-module.js");
 
 /***/ }),
 
-/***/ "pg":
-/*!*********************!*\
-  !*** external "pg" ***!
-  \*********************/
+/***/ 5900:
 /***/ ((module) => {
 
 module.exports = require("pg");
 
 /***/ }),
 
-/***/ "@vercel/postgres":
-/*!***********************************!*\
-  !*** external "@vercel/postgres" ***!
-  \***********************************/
+/***/ 3610:
 /***/ ((module) => {
 
 module.exports = import("@vercel/postgres");;
 
 /***/ }),
 
-/***/ "(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/helpers.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-route-loader/helpers.js ***!
-  \***********************************************************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-eval("/**\n * Hoists a name from a module or promised module.\n *\n * @param module the module to hoist the name from\n * @param name the name to hoist\n * @returns the value on the module (or promised module)\n */ \nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));\nObject.defineProperty(exports, \"hoist\", ({\n    enumerable: true,\n    get: function() {\n        return hoist;\n    }\n}));\nfunction hoist(module, name) {\n    // If the name is available in the module, return it.\n    if (name in module) {\n        return module[name];\n    }\n    // If a property called `then` exists, assume it's a promise and\n    // return a promise that resolves to the name.\n    if (\"then\" in module && typeof module.then === \"function\") {\n        return module.then((mod)=>hoist(mod, name));\n    }\n    // If we're trying to hoise the default export, and the module is a function,\n    // return the module itself.\n    if (typeof module === \"function\" && name === \"default\") {\n        return module;\n    }\n    // Otherwise, return undefined.\n    return undefined;\n}\n\n//# sourceMappingURL=helpers.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LXJvdXRlLWxvYWRlci9oZWxwZXJzLmpzIiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLElBQWlCO0FBQ2pCLDhDQUE2QztBQUM3QztBQUNBLENBQUMsRUFBQztBQUNGLHlDQUF3QztBQUN4QztBQUNBO0FBQ0E7QUFDQTtBQUNBLENBQUMsRUFBQztBQUNGO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQSIsInNvdXJjZXMiOlsid2VicGFjazovL0UtY29tbWVyY2UgU2hvZXNTaG9vdGluZy8uL25vZGVfbW9kdWxlcy9uZXh0L2Rpc3QvYnVpbGQvd2VicGFjay9sb2FkZXJzL25leHQtcm91dGUtbG9hZGVyL2hlbHBlcnMuanM/MDcxYSJdLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEhvaXN0cyBhIG5hbWUgZnJvbSBhIG1vZHVsZSBvciBwcm9taXNlZCBtb2R1bGUuXG4gKlxuICogQHBhcmFtIG1vZHVsZSB0aGUgbW9kdWxlIHRvIGhvaXN0IHRoZSBuYW1lIGZyb21cbiAqIEBwYXJhbSBuYW1lIHRoZSBuYW1lIHRvIGhvaXN0XG4gKiBAcmV0dXJucyB0aGUgdmFsdWUgb24gdGhlIG1vZHVsZSAob3IgcHJvbWlzZWQgbW9kdWxlKVxuICovIFwidXNlIHN0cmljdFwiO1xuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gICAgdmFsdWU6IHRydWVcbn0pO1xuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiaG9pc3RcIiwge1xuICAgIGVudW1lcmFibGU6IHRydWUsXG4gICAgZ2V0OiBmdW5jdGlvbigpIHtcbiAgICAgICAgcmV0dXJuIGhvaXN0O1xuICAgIH1cbn0pO1xuZnVuY3Rpb24gaG9pc3QobW9kdWxlLCBuYW1lKSB7XG4gICAgLy8gSWYgdGhlIG5hbWUgaXMgYXZhaWxhYmxlIGluIHRoZSBtb2R1bGUsIHJldHVybiBpdC5cbiAgICBpZiAobmFtZSBpbiBtb2R1bGUpIHtcbiAgICAgICAgcmV0dXJuIG1vZHVsZVtuYW1lXTtcbiAgICB9XG4gICAgLy8gSWYgYSBwcm9wZXJ0eSBjYWxsZWQgYHRoZW5gIGV4aXN0cywgYXNzdW1lIGl0J3MgYSBwcm9taXNlIGFuZFxuICAgIC8vIHJldHVybiBhIHByb21pc2UgdGhhdCByZXNvbHZlcyB0byB0aGUgbmFtZS5cbiAgICBpZiAoXCJ0aGVuXCIgaW4gbW9kdWxlICYmIHR5cGVvZiBtb2R1bGUudGhlbiA9PT0gXCJmdW5jdGlvblwiKSB7XG4gICAgICAgIHJldHVybiBtb2R1bGUudGhlbigobW9kKT0+aG9pc3QobW9kLCBuYW1lKSk7XG4gICAgfVxuICAgIC8vIElmIHdlJ3JlIHRyeWluZyB0byBob2lzZSB0aGUgZGVmYXVsdCBleHBvcnQsIGFuZCB0aGUgbW9kdWxlIGlzIGEgZnVuY3Rpb24sXG4gICAgLy8gcmV0dXJuIHRoZSBtb2R1bGUgaXRzZWxmLlxuICAgIGlmICh0eXBlb2YgbW9kdWxlID09PSBcImZ1bmN0aW9uXCIgJiYgbmFtZSA9PT0gXCJkZWZhdWx0XCIpIHtcbiAgICAgICAgcmV0dXJuIG1vZHVsZTtcbiAgICB9XG4gICAgLy8gT3RoZXJ3aXNlLCByZXR1cm4gdW5kZWZpbmVkLlxuICAgIHJldHVybiB1bmRlZmluZWQ7XG59XG5cbi8vIyBzb3VyY2VNYXBwaW5nVVJMPWhlbHBlcnMuanMubWFwIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/helpers.js\n");
-
-/***/ }),
-
-/***/ "(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Fauthentication&preferredRegion=&absolutePagePath=.%2Fsrc%5Cpages%5Capi%5Cauthentication.tsx&middlewareConfigBase64=e30%3D!":
-/*!*****************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Fauthentication&preferredRegion=&absolutePagePath=.%2Fsrc%5Cpages%5Capi%5Cauthentication.tsx&middlewareConfigBase64=e30%3D! ***!
-  \*****************************************************************************************************************************************************************************************************************************************/
+/***/ 564:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   config: () => (/* binding */ config),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   routeModule: () => (/* binding */ routeModule)\n/* harmony export */ });\n/* harmony import */ var next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/server/future/route-modules/pages-api/module */ \"(api)/./node_modules/next/dist/server/future/route-modules/pages-api/module.js\");\n/* harmony import */ var next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/dist/server/future/route-kind */ \"(api)/./node_modules/next/dist/server/future/route-kind.js\");\n/* harmony import */ var next_dist_build_webpack_loaders_next_route_loader_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/dist/build/webpack/loaders/next-route-loader/helpers */ \"(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/helpers.js\");\n/* harmony import */ var _src_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src\\pages\\api\\authentication.tsx */ \"(api)/./src/pages/api/authentication.tsx\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_src_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__]);\n_src_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n// @ts-ignore this need to be imported from next/dist to be external\n\n\n\nconst PagesAPIRouteModule = next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0__.PagesAPIRouteModule;\n// Import the userland code.\n// @ts-expect-error - replaced by webpack/turbopack loader\n\n// Re-export the handler (should be the default export).\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_webpack_loaders_next_route_loader_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(_src_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__, \"default\"));\n// Re-export config.\nconst config = (0,next_dist_build_webpack_loaders_next_route_loader_helpers__WEBPACK_IMPORTED_MODULE_2__.hoist)(_src_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__, \"config\");\n// Create and export the route module that will be consumed.\nconst routeModule = new PagesAPIRouteModule({\n    definition: {\n        kind: next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__.RouteKind.PAGES_API,\n        page: \"/api/authentication\",\n        pathname: \"/api/authentication\",\n        // The following aren't used in production.\n        bundlePath: \"\",\n        filename: \"\"\n    },\n    userland: _src_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__\n});\n\n//# sourceMappingURL=pages-api.js.map\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2J1aWxkL3dlYnBhY2svbG9hZGVycy9uZXh0LXJvdXRlLWxvYWRlci9pbmRleC5qcz9raW5kPVBBR0VTX0FQSSZwYWdlPSUyRmFwaSUyRmF1dGhlbnRpY2F0aW9uJnByZWZlcnJlZFJlZ2lvbj0mYWJzb2x1dGVQYWdlUGF0aD0uJTJGc3JjJTVDcGFnZXMlNUNhcGklNUNhdXRoZW50aWNhdGlvbi50c3gmbWlkZGxld2FyZUNvbmZpZ0Jhc2U2ND1lMzAlM0QhIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDaUY7QUFDbEI7QUFDbUI7QUFDbEYsNEJBQTRCLHVHQUEwQjtBQUN0RDtBQUNBO0FBQ2tFO0FBQ2xFO0FBQ0EsaUVBQWUsZ0dBQUssQ0FBQyw4REFBUSxZQUFZLEVBQUM7QUFDMUM7QUFDTyxlQUFlLGdHQUFLLENBQUMsOERBQVE7QUFDcEM7QUFDTztBQUNQO0FBQ0EsY0FBYyx5RUFBUztBQUN2QjtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsS0FBSztBQUNMLFlBQVk7QUFDWixDQUFDOztBQUVELHFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vRS1jb21tZXJjZSBTaG9lc1Nob290aW5nLz85M2Y3Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIEB0cy1pZ25vcmUgdGhpcyBuZWVkIHRvIGJlIGltcG9ydGVkIGZyb20gbmV4dC9kaXN0IHRvIGJlIGV4dGVybmFsXG5pbXBvcnQgKiBhcyBtb2R1bGUgZnJvbSBcIm5leHQvZGlzdC9zZXJ2ZXIvZnV0dXJlL3JvdXRlLW1vZHVsZXMvcGFnZXMtYXBpL21vZHVsZVwiO1xuaW1wb3J0IHsgUm91dGVLaW5kIH0gZnJvbSBcIm5leHQvZGlzdC9zZXJ2ZXIvZnV0dXJlL3JvdXRlLWtpbmRcIjtcbmltcG9ydCB7IGhvaXN0IH0gZnJvbSBcIm5leHQvZGlzdC9idWlsZC93ZWJwYWNrL2xvYWRlcnMvbmV4dC1yb3V0ZS1sb2FkZXIvaGVscGVyc1wiO1xuY29uc3QgUGFnZXNBUElSb3V0ZU1vZHVsZSA9IG1vZHVsZS5QYWdlc0FQSVJvdXRlTW9kdWxlO1xuLy8gSW1wb3J0IHRoZSB1c2VybGFuZCBjb2RlLlxuLy8gQHRzLWV4cGVjdC1lcnJvciAtIHJlcGxhY2VkIGJ5IHdlYnBhY2svdHVyYm9wYWNrIGxvYWRlclxuaW1wb3J0ICogYXMgdXNlcmxhbmQgZnJvbSBcIi4vc3JjXFxcXHBhZ2VzXFxcXGFwaVxcXFxhdXRoZW50aWNhdGlvbi50c3hcIjtcbi8vIFJlLWV4cG9ydCB0aGUgaGFuZGxlciAoc2hvdWxkIGJlIHRoZSBkZWZhdWx0IGV4cG9ydCkuXG5leHBvcnQgZGVmYXVsdCBob2lzdCh1c2VybGFuZCwgXCJkZWZhdWx0XCIpO1xuLy8gUmUtZXhwb3J0IGNvbmZpZy5cbmV4cG9ydCBjb25zdCBjb25maWcgPSBob2lzdCh1c2VybGFuZCwgXCJjb25maWdcIik7XG4vLyBDcmVhdGUgYW5kIGV4cG9ydCB0aGUgcm91dGUgbW9kdWxlIHRoYXQgd2lsbCBiZSBjb25zdW1lZC5cbmV4cG9ydCBjb25zdCByb3V0ZU1vZHVsZSA9IG5ldyBQYWdlc0FQSVJvdXRlTW9kdWxlKHtcbiAgICBkZWZpbml0aW9uOiB7XG4gICAgICAgIGtpbmQ6IFJvdXRlS2luZC5QQUdFU19BUEksXG4gICAgICAgIHBhZ2U6IFwiL2FwaS9hdXRoZW50aWNhdGlvblwiLFxuICAgICAgICBwYXRobmFtZTogXCIvYXBpL2F1dGhlbnRpY2F0aW9uXCIsXG4gICAgICAgIC8vIFRoZSBmb2xsb3dpbmcgYXJlbid0IHVzZWQgaW4gcHJvZHVjdGlvbi5cbiAgICAgICAgYnVuZGxlUGF0aDogXCJcIixcbiAgICAgICAgZmlsZW5hbWU6IFwiXCJcbiAgICB9LFxuICAgIHVzZXJsYW5kXG59KTtcblxuLy8jIHNvdXJjZU1hcHBpbmdVUkw9cGFnZXMtYXBpLmpzLm1hcCJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Fauthentication&preferredRegion=&absolutePagePath=.%2Fsrc%5Cpages%5Capi%5Cauthentication.tsx&middlewareConfigBase64=e30%3D!\n");
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   config: () => (/* binding */ config),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   routeModule: () => (/* binding */ routeModule)
+/* harmony export */ });
+/* harmony import */ var next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6429);
+/* harmony import */ var next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7153);
+/* harmony import */ var next_dist_build_webpack_loaders_next_route_loader_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7305);
+/* harmony import */ var private_next_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6638);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([private_next_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__]);
+private_next_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+// @ts-ignore this need to be imported from next/dist to be external
+
+
+
+const PagesAPIRouteModule = next_dist_server_future_route_modules_pages_api_module__WEBPACK_IMPORTED_MODULE_0__.PagesAPIRouteModule;
+// Import the userland code.
+// @ts-expect-error - replaced by webpack/turbopack loader
+
+// Re-export the handler (should be the default export).
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_webpack_loaders_next_route_loader_helpers__WEBPACK_IMPORTED_MODULE_2__/* .hoist */ .l)(private_next_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__, "default"));
+// Re-export config.
+const config = (0,next_dist_build_webpack_loaders_next_route_loader_helpers__WEBPACK_IMPORTED_MODULE_2__/* .hoist */ .l)(private_next_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__, "config");
+// Create and export the route module that will be consumed.
+const routeModule = new PagesAPIRouteModule({
+    definition: {
+        kind: next_dist_server_future_route_kind__WEBPACK_IMPORTED_MODULE_1__/* .RouteKind */ .x.PAGES_API,
+        page: "/api/authentication",
+        pathname: "/api/authentication",
+        // The following aren't used in production.
+        bundlePath: "",
+        filename: ""
+    },
+    userland: private_next_pages_api_authentication_tsx__WEBPACK_IMPORTED_MODULE_3__
+});
+
+//# sourceMappingURL=pages-api.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
-/***/ "(api)/./src/pages/api/authentication.tsx":
-/*!******************************************!*\
-  !*** ./src/pages/api/authentication.tsx ***!
-  \******************************************/
+/***/ 6638:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ handler)\n/* harmony export */ });\n/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jsonwebtoken */ \"jsonwebtoken\");\n/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var dotenv_safe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! dotenv-safe */ \"dotenv-safe\");\n/* harmony import */ var dotenv_safe__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dotenv_safe__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _vercel_postgres__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @vercel/postgres */ \"@vercel/postgres\");\n/* harmony import */ var pg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! pg */ \"pg\");\n/* harmony import */ var pg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(pg__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var bcrypt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! bcrypt */ \"bcrypt\");\n/* harmony import */ var bcrypt__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(bcrypt__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var cookie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! cookie */ \"cookie\");\n/* harmony import */ var cookie__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(cookie__WEBPACK_IMPORTED_MODULE_5__);\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_vercel_postgres__WEBPACK_IMPORTED_MODULE_2__]);\n_vercel_postgres__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\n\n\n\n\n\n\nasync function handler(req, res) {\n    dotenv_safe__WEBPACK_IMPORTED_MODULE_1___default().config();\n    (cookie__WEBPACK_IMPORTED_MODULE_5___default().parse);\n    const { Pool } = (pg__WEBPACK_IMPORTED_MODULE_3___default());\n    const pool = new Pool({\n        connectionString: process.env.POSTGRES_URL + \"?sslmode=require\"\n    });\n    const passwdCrypted = await _vercel_postgres__WEBPACK_IMPORTED_MODULE_2__.sql.query(`SELECT password from Users WHERE email = '${req.body.mail}';`) // Get password of users\n    ;\n    //Desencrypt password for brcrypt compare the password sended with database\n    const desencrypt = await bcrypt__WEBPACK_IMPORTED_MODULE_4___default().compare(req.body.passwd, passwdCrypted.rows[0].password.split(/\\s+/).join(\"\")) // Regex delete whitespaces\n    ;\n    const authenticate = await _vercel_postgres__WEBPACK_IMPORTED_MODULE_2__.sql.query(`SELECT email, password from Users WHERE email = '${req.body.mail}' AND password = '${desencrypt ? passwdCrypted.rows[0].password.split(/\\s+/).join(\"\") : undefined}';`);\n    const { rowCount } = authenticate;\n    const idQuery = await _vercel_postgres__WEBPACK_IMPORTED_MODULE_2__.sql.query(`SELECT id from Users WHERE email = '${req.body.mail}'`);\n    const id = idQuery.rows[0].id;\n    let token = undefined;\n    if (!rowCount) {\n        res.send(\"PASSWORD NOT FOUND\") // FAIL\n        ;\n    } else {\n        token = jsonwebtoken__WEBPACK_IMPORTED_MODULE_0___default().sign({\n            id\n        }, process.env.SECRET + \"?sslmode=require\", {\n            expiresIn: 10800\n        });\n        // Define o cookie HTTP-only\n        const cookie = (0,cookie__WEBPACK_IMPORTED_MODULE_5__.serialize)(\"token\", token, {\n            httpOnly: true,\n            maxAge: 10800,\n            path: \"/\"\n        });\n        res.setHeader(\"Set-Cookie\", cookie);\n        res.send(\"Sucess!\"); // SUCCESS\n    }\n}\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9zcmMvcGFnZXMvYXBpL2F1dGhlbnRpY2F0aW9uLnRzeCIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFDOEI7QUFDRDtBQUNTO0FBQ2xCO0FBQ087QUFDTztBQUNQO0FBRVosZUFBZU8sUUFDNUJDLEdBQW1CLEVBQ25CQyxHQUFvQjtJQUdwQlIseURBQVU7SUFDVksscURBQVk7SUFDWixNQUFNLEVBQUVNLElBQUksRUFBRSxHQUFHVCwyQ0FBRUE7SUFDbkIsTUFBTVUsT0FBTyxJQUFJRCxLQUFLO1FBQ3BCRSxrQkFBa0JDLFFBQVFDLEdBQUcsQ0FBQ0MsWUFBWSxHQUFHO0lBQy9DO0lBQ0EsTUFBTUMsZ0JBQWdCLE1BQU1oQixpREFBR0EsQ0FBQ2lCLEtBQUssQ0FBQyxDQUFDLDBDQUEwQyxFQUFFWCxJQUFJWSxJQUFJLENBQUNDLElBQUksQ0FBQyxFQUFFLENBQUMsRUFBRSx3QkFBd0I7O0lBRTlILDJFQUEyRTtJQUMzRSxNQUFNQyxhQUFhLE1BQU1sQixxREFBYyxDQUFDSSxJQUFJWSxJQUFJLENBQUNJLE1BQU0sRUFBRU4sY0FBY08sSUFBSSxDQUFDLEVBQUUsQ0FBQ0MsUUFBUSxDQUFDQyxLQUFLLENBQUMsT0FBT0MsSUFBSSxDQUFDLEtBQUssMkJBQTJCOztJQUUxSSxNQUFNQyxlQUF1QixNQUFNM0IsaURBQUdBLENBQUNpQixLQUFLLENBQUMsQ0FBQyxpREFBaUQsRUFBRVgsSUFBSVksSUFBSSxDQUFDQyxJQUFJLENBQUMsa0JBQWtCLEVBQUVDLGFBQWFKLGNBQWNPLElBQUksQ0FBQyxFQUFFLENBQUNDLFFBQVEsQ0FBQ0MsS0FBSyxDQUFDLE9BQU9DLElBQUksQ0FBQyxNQUFNRSxVQUFVLEVBQUUsQ0FBQztJQUNwTixNQUFNLEVBQUVDLFFBQVEsRUFBRSxHQUFRRjtJQUMxQixNQUFNRyxVQUFVLE1BQU05QixpREFBR0EsQ0FBQ2lCLEtBQUssQ0FBQyxDQUFDLG9DQUFvQyxFQUFFWCxJQUFJWSxJQUFJLENBQUNDLElBQUksQ0FBQyxDQUFDLENBQUM7SUFDdkYsTUFBTVksS0FBS0QsUUFBUVAsSUFBSSxDQUFDLEVBQUUsQ0FBQ1EsRUFBRTtJQUM3QixJQUFJQyxRQUFRSjtJQUNaLElBQUksQ0FBQ0MsVUFBVTtRQUNidEIsSUFBSTBCLElBQUksQ0FBQyxzQkFBc0IsT0FBTzs7SUFDeEMsT0FBTztRQUNMRCxRQUFRbEMsd0RBQVEsQ0FBQztZQUFFaUM7UUFBRyxHQUFHbEIsUUFBUUMsR0FBRyxDQUFDcUIsTUFBTSxHQUFHLG9CQUFvQjtZQUFDQyxXQUFXO1FBQUs7UUFFbkYsNEJBQTRCO1FBQzVCLE1BQU1oQyxTQUFTRCxpREFBU0EsQ0FBQyxTQUFTNkIsT0FBTztZQUN2Q0ssVUFBVTtZQUNWQyxRQUFRO1lBQ1JDLE1BQU07UUFDUjtRQUVBaEMsSUFBSWlDLFNBQVMsQ0FBQyxjQUFjcEM7UUFDNUJHLElBQUkwQixJQUFJLENBQUMsWUFBWSxVQUFVO0lBQ2pDO0FBQ0YiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9FLWNvbW1lcmNlIFNob2VzU2hvb3RpbmcvLi9zcmMvcGFnZXMvYXBpL2F1dGhlbnRpY2F0aW9uLnRzeD9lMzE1Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgTmV4dEFwaVJlcXVlc3QsIE5leHRBcGlSZXNwb25zZSB9IGZyb20gJ25leHQnXG5pbXBvcnQgSldUIGZyb20gJ2pzb253ZWJ0b2tlbidcbmltcG9ydCBFTlYgZnJvbSAnZG90ZW52LXNhZmUnXG5pbXBvcnQgeyBzcWwgfSBmcm9tICdAdmVyY2VsL3Bvc3RncmVzJ1xuaW1wb3J0IHBnIGZyb20gJ3BnJztcbmltcG9ydCBiY3J5cHQgZnJvbSAnYmNyeXB0J1xuaW1wb3J0IHsgc2VyaWFsaXplIH0gZnJvbSAnY29va2llJ1xuaW1wb3J0IGNvb2tpZSBmcm9tICdjb29raWUnXG5cbmV4cG9ydCBkZWZhdWx0IGFzeW5jIGZ1bmN0aW9uIGhhbmRsZXIoXG4gIHJlcTogTmV4dEFwaVJlcXVlc3QsXG4gIHJlczogTmV4dEFwaVJlc3BvbnNlXG4pIHtcbiBcbiAgRU5WLmNvbmZpZygpXG4gIGNvb2tpZS5wYXJzZVxuICBjb25zdCB7IFBvb2wgfSA9IHBnO1xuICBjb25zdCBwb29sID0gbmV3IFBvb2woe1xuICAgIGNvbm5lY3Rpb25TdHJpbmc6IHByb2Nlc3MuZW52LlBPU1RHUkVTX1VSTCArIFwiP3NzbG1vZGU9cmVxdWlyZVwiLFxuICB9KVxuICBjb25zdCBwYXNzd2RDcnlwdGVkID0gYXdhaXQgc3FsLnF1ZXJ5KGBTRUxFQ1QgcGFzc3dvcmQgZnJvbSBVc2VycyBXSEVSRSBlbWFpbCA9ICcke3JlcS5ib2R5Lm1haWx9JztgKSAvLyBHZXQgcGFzc3dvcmQgb2YgdXNlcnNcbiAgXG4gIC8vRGVzZW5jcnlwdCBwYXNzd29yZCBmb3IgYnJjcnlwdCBjb21wYXJlIHRoZSBwYXNzd29yZCBzZW5kZWQgd2l0aCBkYXRhYmFzZVxuICBjb25zdCBkZXNlbmNyeXB0ID0gYXdhaXQgYmNyeXB0LmNvbXBhcmUocmVxLmJvZHkucGFzc3dkLCBwYXNzd2RDcnlwdGVkLnJvd3NbMF0ucGFzc3dvcmQuc3BsaXQoL1xccysvKS5qb2luKCcnKSkgLy8gUmVnZXggZGVsZXRlIHdoaXRlc3BhY2VzXG5cbiAgY29uc3QgYXV0aGVudGljYXRlOiBvYmplY3QgPSBhd2FpdCBzcWwucXVlcnkoYFNFTEVDVCBlbWFpbCwgcGFzc3dvcmQgZnJvbSBVc2VycyBXSEVSRSBlbWFpbCA9ICcke3JlcS5ib2R5Lm1haWx9JyBBTkQgcGFzc3dvcmQgPSAnJHtkZXNlbmNyeXB0ID8gcGFzc3dkQ3J5cHRlZC5yb3dzWzBdLnBhc3N3b3JkLnNwbGl0KC9cXHMrLykuam9pbignJykgOiB1bmRlZmluZWR9JztgKVxuICBjb25zdCB7IHJvd0NvdW50IH06IGFueSA9IGF1dGhlbnRpY2F0ZVxuICBjb25zdCBpZFF1ZXJ5ID0gYXdhaXQgc3FsLnF1ZXJ5KGBTRUxFQ1QgaWQgZnJvbSBVc2VycyBXSEVSRSBlbWFpbCA9ICcke3JlcS5ib2R5Lm1haWx9J2ApXG4gIGNvbnN0IGlkID0gaWRRdWVyeS5yb3dzWzBdLmlkXG4gIGxldCB0b2tlbiA9IHVuZGVmaW5lZFxuICBpZiAoIXJvd0NvdW50KSB7XG4gICAgcmVzLnNlbmQoJ1BBU1NXT1JEIE5PVCBGT1VORCcpIC8vIEZBSUxcbiAgfSBlbHNlIHtcbiAgICB0b2tlbiA9IEpXVC5zaWduKHsgaWQgfSwgcHJvY2Vzcy5lbnYuU0VDUkVUICsgXCI/c3NsbW9kZT1yZXF1aXJlXCIsIHtleHBpcmVzSW46IDEwODAwfSlcbiAgIFxuICAgIC8vIERlZmluZSBvIGNvb2tpZSBIVFRQLW9ubHlcbiAgICBjb25zdCBjb29raWUgPSBzZXJpYWxpemUoJ3Rva2VuJywgdG9rZW4sIHtcbiAgICAgIGh0dHBPbmx5OiB0cnVlLFxuICAgICAgbWF4QWdlOiAxMDgwMCwgLy8gTGlmZXRpbWUgb2YgY29va2llIChhcXVpLCAzIGhvcmEpXG4gICAgICBwYXRoOiAnLycsIC8vIFBhdGhzIHdoZXJlIGNvb2tpZSBhcmUgYWNjZXB0ZWQgKHJvb3QpXG4gICAgfSk7XG5cbiAgICByZXMuc2V0SGVhZGVyKCdTZXQtQ29va2llJywgY29va2llKTtcbiAgICByZXMuc2VuZCgnU3VjZXNzIScpOyAvLyBTVUNDRVNTXG4gIH1cbn1cblxuIl0sIm5hbWVzIjpbIkpXVCIsIkVOViIsInNxbCIsInBnIiwiYmNyeXB0Iiwic2VyaWFsaXplIiwiY29va2llIiwiaGFuZGxlciIsInJlcSIsInJlcyIsImNvbmZpZyIsInBhcnNlIiwiUG9vbCIsInBvb2wiLCJjb25uZWN0aW9uU3RyaW5nIiwicHJvY2VzcyIsImVudiIsIlBPU1RHUkVTX1VSTCIsInBhc3N3ZENyeXB0ZWQiLCJxdWVyeSIsImJvZHkiLCJtYWlsIiwiZGVzZW5jcnlwdCIsImNvbXBhcmUiLCJwYXNzd2QiLCJyb3dzIiwicGFzc3dvcmQiLCJzcGxpdCIsImpvaW4iLCJhdXRoZW50aWNhdGUiLCJ1bmRlZmluZWQiLCJyb3dDb3VudCIsImlkUXVlcnkiLCJpZCIsInRva2VuIiwic2VuZCIsInNpZ24iLCJTRUNSRVQiLCJleHBpcmVzSW4iLCJodHRwT25seSIsIm1heEFnZSIsInBhdGgiLCJzZXRIZWFkZXIiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./src/pages/api/authentication.tsx\n");
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ handler)
+/* harmony export */ });
+/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9344);
+/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var dotenv_safe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9948);
+/* harmony import */ var dotenv_safe__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dotenv_safe__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _vercel_postgres__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3610);
+/* harmony import */ var pg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5900);
+/* harmony import */ var pg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(pg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var bcrypt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7096);
+/* harmony import */ var bcrypt__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(bcrypt__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var cookie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4802);
+/* harmony import */ var cookie__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(cookie__WEBPACK_IMPORTED_MODULE_5__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_vercel_postgres__WEBPACK_IMPORTED_MODULE_2__]);
+_vercel_postgres__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
-/***/ }),
 
-/***/ "(api)/./node_modules/next/dist/server/future/route-kind.js":
-/*!************************************************************!*\
-  !*** ./node_modules/next/dist/server/future/route-kind.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, exports) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));\nObject.defineProperty(exports, \"RouteKind\", ({\n    enumerable: true,\n    get: function() {\n        return RouteKind;\n    }\n}));\nvar RouteKind;\n(function(RouteKind) {\n    RouteKind[/**\n   * `PAGES` represents all the React pages that are under `pages/`.\n   */ \"PAGES\"] = \"PAGES\";\n    RouteKind[/**\n   * `PAGES_API` represents all the API routes under `pages/api/`.\n   */ \"PAGES_API\"] = \"PAGES_API\";\n    RouteKind[/**\n   * `APP_PAGE` represents all the React pages that are under `app/` with the\n   * filename of `page.{j,t}s{,x}`.\n   */ \"APP_PAGE\"] = \"APP_PAGE\";\n    RouteKind[/**\n   * `APP_ROUTE` represents all the API routes and metadata routes that are under `app/` with the\n   * filename of `route.{j,t}s{,x}`.\n   */ \"APP_ROUTE\"] = \"APP_ROUTE\";\n})(RouteKind || (RouteKind = {}));\n\n//# sourceMappingURL=route-kind.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUta2luZC5qcyIsIm1hcHBpbmdzIjoiQUFBYTtBQUNiLDhDQUE2QztBQUM3QztBQUNBLENBQUMsRUFBQztBQUNGLDZDQUE0QztBQUM1QztBQUNBO0FBQ0E7QUFDQTtBQUNBLENBQUMsRUFBQztBQUNGO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0Esd0JBQXdCLElBQUksRUFBRSxHQUFHO0FBQ2pDO0FBQ0E7QUFDQTtBQUNBLHlCQUF5QixJQUFJLEVBQUUsR0FBRztBQUNsQztBQUNBLENBQUMsOEJBQThCOztBQUUvQiIsInNvdXJjZXMiOlsid2VicGFjazovL0UtY29tbWVyY2UgU2hvZXNTaG9vdGluZy8uL25vZGVfbW9kdWxlcy9uZXh0L2Rpc3Qvc2VydmVyL2Z1dHVyZS9yb3V0ZS1raW5kLmpzP2EzNDMiXSwic291cmNlc0NvbnRlbnQiOlsiXCJ1c2Ugc3RyaWN0XCI7XG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJSb3V0ZUtpbmRcIiwge1xuICAgIGVudW1lcmFibGU6IHRydWUsXG4gICAgZ2V0OiBmdW5jdGlvbigpIHtcbiAgICAgICAgcmV0dXJuIFJvdXRlS2luZDtcbiAgICB9XG59KTtcbnZhciBSb3V0ZUtpbmQ7XG4oZnVuY3Rpb24oUm91dGVLaW5kKSB7XG4gICAgUm91dGVLaW5kWy8qKlxuICAgKiBgUEFHRVNgIHJlcHJlc2VudHMgYWxsIHRoZSBSZWFjdCBwYWdlcyB0aGF0IGFyZSB1bmRlciBgcGFnZXMvYC5cbiAgICovIFwiUEFHRVNcIl0gPSBcIlBBR0VTXCI7XG4gICAgUm91dGVLaW5kWy8qKlxuICAgKiBgUEFHRVNfQVBJYCByZXByZXNlbnRzIGFsbCB0aGUgQVBJIHJvdXRlcyB1bmRlciBgcGFnZXMvYXBpL2AuXG4gICAqLyBcIlBBR0VTX0FQSVwiXSA9IFwiUEFHRVNfQVBJXCI7XG4gICAgUm91dGVLaW5kWy8qKlxuICAgKiBgQVBQX1BBR0VgIHJlcHJlc2VudHMgYWxsIHRoZSBSZWFjdCBwYWdlcyB0aGF0IGFyZSB1bmRlciBgYXBwL2Agd2l0aCB0aGVcbiAgICogZmlsZW5hbWUgb2YgYHBhZ2Uue2osdH1zeyx4fWAuXG4gICAqLyBcIkFQUF9QQUdFXCJdID0gXCJBUFBfUEFHRVwiO1xuICAgIFJvdXRlS2luZFsvKipcbiAgICogYEFQUF9ST1VURWAgcmVwcmVzZW50cyBhbGwgdGhlIEFQSSByb3V0ZXMgYW5kIG1ldGFkYXRhIHJvdXRlcyB0aGF0IGFyZSB1bmRlciBgYXBwL2Agd2l0aCB0aGVcbiAgICogZmlsZW5hbWUgb2YgYHJvdXRlLntqLHR9c3sseH1gLlxuICAgKi8gXCJBUFBfUk9VVEVcIl0gPSBcIkFQUF9ST1VURVwiO1xufSkoUm91dGVLaW5kIHx8IChSb3V0ZUtpbmQgPSB7fSkpO1xuXG4vLyMgc291cmNlTWFwcGluZ1VSTD1yb3V0ZS1raW5kLmpzLm1hcCJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./node_modules/next/dist/server/future/route-kind.js\n");
 
-/***/ }),
 
-/***/ "(api)/./node_modules/next/dist/server/future/route-modules/pages-api/module.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/next/dist/server/future/route-modules/pages-api/module.js ***!
-  \********************************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));\n0 && (0);\nfunction _export(target, all) {\n    for(var name in all)Object.defineProperty(target, name, {\n        enumerable: true,\n        get: all[name]\n    });\n}\n_export(exports, {\n    PagesAPIRouteModule: function() {\n        return PagesAPIRouteModule;\n    },\n    default: function() {\n        return _default;\n    }\n});\nconst _routemodule = __webpack_require__(/*! ../route-module */ \"../route-module\");\nconst _node = __webpack_require__(/*! ../../../api-utils/node */ \"../../../api-utils/node\");\nclass PagesAPIRouteModule extends _routemodule.RouteModule {\n    /**\n   *\n   * @param req the incoming server request\n   * @param res the outgoing server response\n   * @param context the context for the render\n   */ async render(req, res, context) {\n        await (0, _node.apiResolver)(req, res, context.query, this.userland, {\n            ...context.previewProps,\n            revalidate: context.revalidate,\n            trustHostHeader: context.trustHostHeader,\n            allowedRevalidateHeaderKeys: context.allowedRevalidateHeaderKeys,\n            hostname: context.hostname\n        }, context.minimalMode, context.dev, context.page);\n    }\n}\nconst _default = PagesAPIRouteModule;\n\n//# sourceMappingURL=module.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L3NlcnZlci9mdXR1cmUvcm91dGUtbW9kdWxlcy9wYWdlcy1hcGkvbW9kdWxlLmpzIiwibWFwcGluZ3MiOiJBQUFhO0FBQ2IsOENBQTZDO0FBQzdDO0FBQ0EsQ0FBQyxFQUFDO0FBQ0YsTUFBTSxDQUdMO0FBQ0Q7QUFDQTtBQUNBO0FBQ0E7QUFDQSxLQUFLO0FBQ0w7QUFDQTtBQUNBO0FBQ0E7QUFDQSxLQUFLO0FBQ0w7QUFDQTtBQUNBO0FBQ0EsQ0FBQztBQUNELHFCQUFxQixtQkFBTyxDQUFDLHdDQUFpQjtBQUM5QyxjQUFjLG1CQUFPLENBQUMsd0RBQXlCO0FBQy9DO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsU0FBUztBQUNUO0FBQ0E7QUFDQTs7QUFFQSIsInNvdXJjZXMiOlsid2VicGFjazovL0UtY29tbWVyY2UgU2hvZXNTaG9vdGluZy8uL25vZGVfbW9kdWxlcy9uZXh0L2Rpc3Qvc2VydmVyL2Z1dHVyZS9yb3V0ZS1tb2R1bGVzL3BhZ2VzLWFwaS9tb2R1bGUuanM/ZDU0MCJdLCJzb3VyY2VzQ29udGVudCI6WyJcInVzZSBzdHJpY3RcIjtcbk9iamVjdC5kZWZpbmVQcm9wZXJ0eShleHBvcnRzLCBcIl9fZXNNb2R1bGVcIiwge1xuICAgIHZhbHVlOiB0cnVlXG59KTtcbjAgJiYgKG1vZHVsZS5leHBvcnRzID0ge1xuICAgIFBhZ2VzQVBJUm91dGVNb2R1bGU6IG51bGwsXG4gICAgZGVmYXVsdDogbnVsbFxufSk7XG5mdW5jdGlvbiBfZXhwb3J0KHRhcmdldCwgYWxsKSB7XG4gICAgZm9yKHZhciBuYW1lIGluIGFsbClPYmplY3QuZGVmaW5lUHJvcGVydHkodGFyZ2V0LCBuYW1lLCB7XG4gICAgICAgIGVudW1lcmFibGU6IHRydWUsXG4gICAgICAgIGdldDogYWxsW25hbWVdXG4gICAgfSk7XG59XG5fZXhwb3J0KGV4cG9ydHMsIHtcbiAgICBQYWdlc0FQSVJvdXRlTW9kdWxlOiBmdW5jdGlvbigpIHtcbiAgICAgICAgcmV0dXJuIFBhZ2VzQVBJUm91dGVNb2R1bGU7XG4gICAgfSxcbiAgICBkZWZhdWx0OiBmdW5jdGlvbigpIHtcbiAgICAgICAgcmV0dXJuIF9kZWZhdWx0O1xuICAgIH1cbn0pO1xuY29uc3QgX3JvdXRlbW9kdWxlID0gcmVxdWlyZShcIi4uL3JvdXRlLW1vZHVsZVwiKTtcbmNvbnN0IF9ub2RlID0gcmVxdWlyZShcIi4uLy4uLy4uL2FwaS11dGlscy9ub2RlXCIpO1xuY2xhc3MgUGFnZXNBUElSb3V0ZU1vZHVsZSBleHRlbmRzIF9yb3V0ZW1vZHVsZS5Sb3V0ZU1vZHVsZSB7XG4gICAgLyoqXG4gICAqXG4gICAqIEBwYXJhbSByZXEgdGhlIGluY29taW5nIHNlcnZlciByZXF1ZXN0XG4gICAqIEBwYXJhbSByZXMgdGhlIG91dGdvaW5nIHNlcnZlciByZXNwb25zZVxuICAgKiBAcGFyYW0gY29udGV4dCB0aGUgY29udGV4dCBmb3IgdGhlIHJlbmRlclxuICAgKi8gYXN5bmMgcmVuZGVyKHJlcSwgcmVzLCBjb250ZXh0KSB7XG4gICAgICAgIGF3YWl0ICgwLCBfbm9kZS5hcGlSZXNvbHZlcikocmVxLCByZXMsIGNvbnRleHQucXVlcnksIHRoaXMudXNlcmxhbmQsIHtcbiAgICAgICAgICAgIC4uLmNvbnRleHQucHJldmlld1Byb3BzLFxuICAgICAgICAgICAgcmV2YWxpZGF0ZTogY29udGV4dC5yZXZhbGlkYXRlLFxuICAgICAgICAgICAgdHJ1c3RIb3N0SGVhZGVyOiBjb250ZXh0LnRydXN0SG9zdEhlYWRlcixcbiAgICAgICAgICAgIGFsbG93ZWRSZXZhbGlkYXRlSGVhZGVyS2V5czogY29udGV4dC5hbGxvd2VkUmV2YWxpZGF0ZUhlYWRlcktleXMsXG4gICAgICAgICAgICBob3N0bmFtZTogY29udGV4dC5ob3N0bmFtZVxuICAgICAgICB9LCBjb250ZXh0Lm1pbmltYWxNb2RlLCBjb250ZXh0LmRldiwgY29udGV4dC5wYWdlKTtcbiAgICB9XG59XG5jb25zdCBfZGVmYXVsdCA9IFBhZ2VzQVBJUm91dGVNb2R1bGU7XG5cbi8vIyBzb3VyY2VNYXBwaW5nVVJMPW1vZHVsZS5qcy5tYXAiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./node_modules/next/dist/server/future/route-modules/pages-api/module.js\n");
+
+async function handler(req, res) {
+    dotenv_safe__WEBPACK_IMPORTED_MODULE_1___default().config();
+    (cookie__WEBPACK_IMPORTED_MODULE_5___default().parse);
+    const { Pool } = (pg__WEBPACK_IMPORTED_MODULE_3___default());
+    const pool = new Pool({
+        connectionString: process.env.POSTGRES_URL + "?sslmode=require"
+    });
+    const passwdCrypted = await _vercel_postgres__WEBPACK_IMPORTED_MODULE_2__.sql.query(`SELECT password from Users WHERE email = '${req.body.mail}';`) // Get password of users
+    ;
+    //Desencrypt password for brcrypt compare the password sended with database
+    const desencrypt = await bcrypt__WEBPACK_IMPORTED_MODULE_4___default().compare(req.body.passwd, passwdCrypted.rows[0].password.split(/\s+/).join("")) // Regex delete whitespaces
+    ;
+    const authenticate = await _vercel_postgres__WEBPACK_IMPORTED_MODULE_2__.sql.query(`SELECT email, password from Users WHERE email = '${req.body.mail}' AND password = '${desencrypt ? passwdCrypted.rows[0].password.split(/\s+/).join("") : undefined}';`);
+    const { rowCount } = authenticate;
+    const idQuery = await _vercel_postgres__WEBPACK_IMPORTED_MODULE_2__.sql.query(`SELECT id from Users WHERE email = '${req.body.mail}'`);
+    const id = idQuery.rows[0].id;
+    if (!rowCount) {
+        res.send("PASSWORD NOT FOUND") // FAIL
+        ;
+    } else {
+        let token = jsonwebtoken__WEBPACK_IMPORTED_MODULE_0___default().sign({
+            id
+        }, process.env.SECRET + "?sslmode=require", {
+            expiresIn: 10800
+        });
+        // Define o cookie HTTP-only
+        const cookie = (0,cookie__WEBPACK_IMPORTED_MODULE_5__.serialize)("token", token, {
+            httpOnly: true,
+            maxAge: 10800,
+            path: "/"
+        });
+        res.setHeader("Set-Cookie", cookie);
+        res.send("Sucess!"); // SUCCESS
+    }
+}
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ })
 
@@ -150,7 +185,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({\n    value: true\n}));
 var __webpack_require__ = require("../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("(api)/./node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js?kind=PAGES_API&page=%2Fapi%2Fauthentication&preferredRegion=&absolutePagePath=.%2Fsrc%5Cpages%5Capi%5Cauthentication.tsx&middlewareConfigBase64=e30%3D!"));
+var __webpack_exports__ = __webpack_require__.X(0, [172], () => (__webpack_exec__(564)));
 module.exports = __webpack_exports__;
 
 })();

@@ -6,11 +6,15 @@ import { Context } from "../Context/context"
 import { useState, useContext } from "react"
 
 export default function Login(){
+  const header: any = {
+    'Content-Type' : 'application/json',
+    "Access-Control-Allow-Origin": "https://shoesshooting.vercel.app", //https://shoesshooting.vercel.app
+  }
   const [Data, setData] = useState<any>({
     mail: '',
     passwd: '',
   })
-  const {header, animationOn, setanimationOn, errorType, seterrorType} : any = useContext(Context)
+  const {animationOn, setanimationOn, errorType, seterrorType} : any = useContext(Context)
 
   const handleInput = (e: any) => {
     setData({...Data, [e.target.name] : e.target.value})

@@ -11,7 +11,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
- 
+
   ENV.config()
   cookie.parse
   const { Pool } = pg;
@@ -19,7 +19,7 @@ export default async function handler(
     connectionString: process.env.POSTGRES_URL + "?sslmode=require",
   })
   const passwdCrypted = await sql.query(`SELECT password from Users WHERE email = '${req.body.mail}';`) // Get password of users
-  
+
   //Desencrypt password for brcrypt compare the password sended with database
   const desencrypt = await bcrypt.compare(req.body.passwd, passwdCrypted.rows[0].password.split(/\s+/).join('')) // Regex delete whitespaces
 
@@ -27,12 +27,11 @@ export default async function handler(
   const { rowCount }: any = authenticate
   const idQuery = await sql.query(`SELECT id from Users WHERE email = '${req.body.mail}'`)
   const id = idQuery.rows[0].id
-  let token = undefined
   if (!rowCount) {
     res.send('PASSWORD NOT FOUND') // FAIL
   } else {
-    token = JWT.sign({ id }, process.env.SECRET + "?sslmode=require", {expiresIn: 10800})
-   
+    let token = JWT.sign({ id }, process.env.SECRET + "?sslmode=require", { expiresIn: 10800 })
+
     // Define o cookie HTTP-only
     const cookie = serialize('token', token, {
       httpOnly: true,
@@ -44,4 +43,3 @@ export default async function handler(
     res.send('Sucess!'); // SUCCESS
   }
 }
-
