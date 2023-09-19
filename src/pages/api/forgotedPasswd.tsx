@@ -1,4 +1,3 @@
-"use strict";
 import { sql } from '@vercel/postgres'
 import pg from 'pg';
 import nodemailer from 'nodemailer'
@@ -32,9 +31,9 @@ const transporter = nodemailer.createTransport({
 
  const main = async () => {
   const info = await transporter.sendMail({
-    from: '"ShoesShooting - Robot 👻" luizzleandro827@gmail.com', // sender address
+    from: '"ShoesShooting"', // sender address
     to: `${req.body.mail}`, // list of receivers
-    subject: "Shoes SHooting", // Subject line
+    subject: "Shoes Shooting", // Subject line
     text: "Hello let's change this passwd!", // plain text body
     html: `
     <h1>Insert this code in <a href='http://localhost:3000/forgot-your-password'>Recovery password</a>.</h1>

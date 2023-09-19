@@ -61,7 +61,7 @@ export default function Login(){
       const EmailInput: any = document.querySelector(".Email")
       EmailInput?.value == '' ? (setanimationOn(ErrorCSS.error), seterrorType('Insert your email for change please')) : 
       ( localStorage.setItem('email', EmailInput?.value)
-        ,await axios.post('https://shoesshooting.vercel.app/api/forgotedPasswd', Data, header)
+        ,await axios.post('/api/forgotedPasswd', Data, header)
       .then(rowCounted => rowCounted.data >= 1 ? (localStorage.setItem('info', rowCounted.data),location.replace('/forgot-your-password')) : console.log('erro'))
       )
     }
