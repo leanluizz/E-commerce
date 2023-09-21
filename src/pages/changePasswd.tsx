@@ -22,7 +22,7 @@ export default () => {
             email: email,
             passwordReset: e.target[0]?.value
         }
-        await axios.post('https://shoesshooting.vercel.app/api/changepasswd', data, header)
+        await axios.post('/api/changepasswd', data, header)
         .then(resp => resp.data ? location.replace('/login') : null)
         .catch(() => setanimationOn(ErrorCSS.error))
     }

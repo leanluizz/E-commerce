@@ -40,7 +40,7 @@ import Context from '@/components/Context/context';
         .map((inputRef: any) => inputRef.current.value)
         .join('')}
         
-        await axios.post('https://shoesshooting.vercel.app/api/verifyCode', concatenatedValue, header)
+        await axios.post('/api/verifyCode', concatenatedValue, header)
         .then(() => location.replace('/changePasswd'))
         .catch(() => (setanimationOn(ErrorCSS.error), seterrorType('Wrong code')))
     }
