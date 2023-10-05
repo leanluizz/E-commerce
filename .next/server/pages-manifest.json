@@ -2,9 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/changePasswd": "pages/changePasswd.js",
-  "/api/verifyCode": "pages/api/verifyCode.js",
-  "/forgot-your-password": "pages/forgot-your-password.js",
   "/": "pages/index.js",
+  "/login": "pages/login.js",
   "/api/showData": "pages/api/showData.js"
 }

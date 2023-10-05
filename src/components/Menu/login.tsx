@@ -49,7 +49,7 @@ export default function Login(){
     })
       .catch(err => {
         setanimationOn(ErrorCSS.error)
-        seterrorType(`${err}`)   
+        seterrorType(`User not found, ${err} Status`)   
         console.log(err)
     })
 }
