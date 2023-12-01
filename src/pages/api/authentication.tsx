@@ -22,6 +22,7 @@ export default async function handler(
 
   //Desencrypt password for brcrypt compare the password sended with database
   const desencrypt = await bcrypt.compare(req.body.passwd, passwdCrypted.rows[0].password.split(/\s+/).join('')) // Regex delete whitespaces
+console.log(desencrypt);
 
   const authenticate: object = await sql.query(`SELECT email, password from Users WHERE email = '${req.body.mail}' AND password = '${desencrypt ? passwdCrypted.rows[0].password.split(/\s+/).join('') : undefined}';`)
   const { rowCount }: any = authenticate
@@ -40,6 +41,6 @@ export default async function handler(
     });
 
     res.setHeader('Set-Cookie', cookie);
-    res.send('Sucess!'); // SUCCESS
+    res.send({auth:'Sucess!', mail: req.body.mail, id: id}); // SUCCESS
   }
 }

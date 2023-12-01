@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect, useContext} from 'react'
 import Error from '@/components/Alerts/error'
@@ -56,6 +57,14 @@ export default () => {
     </form>
     
   return (
+    <>
+    <Head>
+        <link
+          rel="shortcut icon"
+          href="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-flat/96/Running-Shoe-Flat-icon.png"
+        />
+        <title>ShoesShooting</title>
+      </Head>
     <div className='d-flex flex-column'>
       <Menu colortitle="text-light" />
       <Error 
@@ -85,5 +94,6 @@ export default () => {
       </div>
       {Form}
     </div>
+    </>
   );
 };

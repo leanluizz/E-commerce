@@ -5,7 +5,7 @@ export default function Error({animation, typeOfError}: any){
     return(
   <div className={`err ${animation} d-flex align-items-center bg-danger text-center bg-gradient rounded-end position-absolute`}>
     <div className='d-flex flex-column'>
-    <p className='fw-bolder text-light p-2 m-1'>Oops occurred some one error!</p>   
+    <p className='fw-bolder text-light p-2 m-1'>Oops ocorreu algum erro!</p>   
     <p className='fw-bolder text-light p-2 m-1'>{typeOfError}</p>
     </div>
     <Button className={`x ${ ErrorCSS.esc } bg-transparent border-0 p-2 mb-5`}>

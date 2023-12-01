@@ -38,18 +38,20 @@ export default function Login(){
       setanimationOn(ErrorCSS.error)
       seterrorType('Verify the inputs, some input maybe has empty.')
   }else{
-    await axios.post('https://shoesshooting.vercel.app/api/authentication', Data, header) // https://shoesshooting.vercel.app/api/authentication
+    await axios.post('api/authentication', Data, header) // https://shoesshooting.vercel.app/api/authentication
     .then(resp => {
       if(resp.data == 'PASSWORD NOT FOUND'){
         setanimationOn(ErrorCSS.error)
         seterrorType('Password not found, try again or click in "forget password?"')    
       }else{
+        localStorage.setItem('email', resp.data.mail)
+        localStorage.setItem('id', resp.data.id)
         location.replace('/')     
       }
     })
       .catch(err => {
         setanimationOn(ErrorCSS.error)
-        seterrorType(`User not found, ${err} Status`)   
+        seterrorType(`${err}`)   
         console.log(err)
     })
 }
@@ -79,13 +81,13 @@ export default function Login(){
   </div>
 
   <div className="mb-3">
-    <label htmlFor="exampleInputPassword1" className="form-label text-light">Password</label>
+    <label htmlFor="exampleInputPassword1" className="form-label text-light">Senha</label>
     <input placeholder="Password" onChange={handleInput} name="passwd" type="password" className="form-control" id="exampleInputPassword1" />
   </div>
   <div className='d-flex flex-column'>
-  <button type="submit" className="btn btn-danger bg-gradient">Submit</button>
-  <button type="submit" className='mt-2 bg-transparent border-0 text-primary' onClick={Forgoted}>Forgot password?</button>
-  <Link className='mt-2 text-center' href='/register'>Dont have a account?</Link>
+  <button type="submit" className="btn btn-danger bg-gradient">Enviar</button>
+  <button type="submit" className='mt-2 bg-transparent border-0 text-primary' onClick={Forgoted}>Esqueceu sua senha?</button>
+  <Link className='mt-2 text-center' href='/register'>Não tem uma conta ainda?</Link>
   </div>
 </form> 
 </div>

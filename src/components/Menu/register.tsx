@@ -4,6 +4,9 @@ import Link from "next/link"
 import { useState, useContext } from "react"
 import axios from 'axios'
 import Context from '../Context/context'
+import { ref, uploadBytesResumable } from 'firebase/storage';
+import {storage} from '@/pages/api/uploadImages';
+
 
 export default function Register(){
   const {animationOn, setanimationOn, errorType, seterrorType, header} : any = useContext(Context)
@@ -17,12 +20,12 @@ const handleInput = (e: any) => {
   setData({...Data, [e.target.name] : e.target.value})
 }
 if (process.browser) {
+  localStorage.setItem('email', Data.email)
   const btnXError: any = document.querySelector('.x')
   btnXError?.addEventListener('click', () => setanimationOn(ErrorCSS.errorOFF)) 
 }
  const Submit = async (e: any) =>{
   e.preventDefault()
-
   if (process.browser) {
     const passwd: any = document.querySelector('.passwd')
     const passwdV: any = document.querySelector('.passwdConfirm')
@@ -50,9 +53,11 @@ if (process.browser) {
       input.forEach(function(input: any) {
         input.value = ''
      }) 
-      localStorage.setItem('success', 'yes')
-      await axios.post('https://shoesshooting.vercel.app/api/sql', Data, header) //  https://shoesshooting.vercel.app/api/sql
-      .then(response => response.data == 'err in credentials' ? (setanimationOn(ErrorCSS.error), seterrorType('Cpf or Email has been registered.')) : window.open('/registered'))
+      await axios.post('/api/sql', Data, header) //  https://shoesshooting.vercel.app/api/sql
+      .then(response => response.data == 'err in credentials' ? (setanimationOn(ErrorCSS.error), seterrorType('Cpf or Email has been registered.')) : (
+       // uploadBytesResumable(ref(storage, `profiles/${process.browser ? localStorage.getItem('email') : null}/profile.png`), blobImage),
+        localStorage.setItem('success', 'yes'),
+        window.open('/registered')))
     }
   }
  }
@@ -69,7 +74,7 @@ if (process.browser) {
     <input placeholder='Name' maxLength={10} onChange={handleInput} type="text" className="input-register form-control" name="name" id="name" aria-describedby="emailHelp" />
   </div>
   <div className="mb-3">
-    <label htmlFor="email" className="form-label text-light">Email address</label>
+    <label htmlFor="email" className="form-label text-light">Email</label>
     <input placeholder='Email' onChange={handleInput} type="email" className="input-register form-control" name="email" id="email" aria-describedby="emailHelp" />
   </div>
   <div className="mb-3">
@@ -81,8 +86,8 @@ if (process.browser) {
     <input placeholder='Confirm your password' type="password" className="passwdConfirm form-control" id="input-register passwdConfirm" />
   </div>
   <div className="d-flex flex-column">
-  <button onSubmit={(e) => e.preventDefault()} type="submit" className="btn btn-danger bg-gradient">Submit</button>
-  <Link className="mt-2" href='/login'>Already have an account?</Link>
+  <button onSubmit={(e) => e.preventDefault()} type="submit" className="btn btn-danger bg-gradient">Enviar</button>
+  <Link className="mt-2" href='/login'>Já tem uma conta?</Link>
   </div>
 </form> 
 </>

@@ -49,3 +49,6 @@ input[type=number]::-webkit-inner-spin-button {
 input{ 
     outline: 0;
 }
+.width{
+    width: 932px;
+}

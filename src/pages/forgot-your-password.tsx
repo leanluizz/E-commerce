@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from 'react';
+import React, { useRef, useContext, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from 'next/head';
 import Error from '@/components/Alerts/error'
@@ -8,6 +8,11 @@ import axios from 'axios';
 import Context from '@/components/Context/context';
 
  function FormTextExample() {
+  const [Data, setData] = useState(
+    {
+      mail: process.browser ? localStorage.getItem('email') : null
+    }
+  )
   const { header, animationOn, setanimationOn, errorType, seterrorType }: any = useContext(Context)
   let input: any = undefined;
   const inputRefs = useRef<any>([
@@ -41,7 +46,7 @@ import Context from '@/components/Context/context';
         .join('')}
         
         await axios.post('/api/verifyCode', concatenatedValue, header)
-        .then(() => location.replace('/changePasswd'))
+        .then(resp => resp.data == 200 ? location.replace('/changePasswd') : (setanimationOn(ErrorCSS.error), seterrorType('Wrong code')))
         .catch(() => (setanimationOn(ErrorCSS.error), seterrorType('Wrong code')))
     }
   }
@@ -59,10 +64,9 @@ import Context from '@/components/Context/context';
       <Error 
       animation={animationOn}
       typeOfError={errorType}/> 
+      <h1 className='text-center text-danger'>If you dont find the code, see your spam box</h1>
       <form className="center w-25">
         <h1 className="text-light w-0">Insert the code sent to your email</h1>
-
-       
           <div className="d-flex flex-row align-items-center">
             {inputRefs.current.map((inputRef: any, index: any) => (
               <input
@@ -88,6 +92,11 @@ import Context from '@/components/Context/context';
               />
             ))}
           </div>
+          <button onClick={
+            async function ()
+            { await axios.post('/api/forgotedPasswd', Data, header)
+          .then(resp => console.log(resp))}
+            } className='btn btn-danger btn-gradient mt-5'>Resend</button>
       </form>
     </>
   );

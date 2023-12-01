@@ -1,3 +1,4 @@
+import Loading from '@/img/Features/loading....gif'
 import Search from '@/components/Menu/search'
 import Carousel from '@/components/Carousel/carousel'
 import Dropdown from '@/components/Menu/dropdown'
@@ -8,21 +9,27 @@ import Buttons from '@/components/Menu/buttons'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Head from 'next/head'
 import { useContext, useEffect, useState } from 'react'
-import axios from 'axios'
 import Context from '@/components/Context/context'
+import Gallery from '@/components/Body/Photos'
+import Image from 'next/image'
+import Sponsors from '@/components/Body/Sponsors'
+import Cookies from '@/components/Features/cookies'
+import Models from  '@/components/Body/Models'
+import MoreSales from '@/components/Body/moreSales'
+import WantBeModel from '@/components/Body/WantBeModel'
+import Footer from '@/components/Footer/Footer'
 
 export default function Home() {
   //If logged account
-  let [MenuDD, setMenuDD] = useState(<MenuDropdown />)
-  let [Button, setButton] = useState(<Buttons />)
+  let [MenuDD, setMenuDD] = useState(<Image width={100} src={Loading} alt='Loading...'/>)
+  let [Button, setButton] = useState(<Image width={100} src={Loading} alt='Loading...'/>)
 if (process.browser) {
  const { header }: any = useContext(Context)
   useEffect(() => {
     fetch('/api/showData', header)
     .then(resp => resp.json())
-    .then(resp => !resp.erro ? ( setMenuDD(<LogedDropDown/ >), setButton(<></>)):null)
+    .then(resp => !resp.erro ? ( setMenuDD(<LogedDropDown/ >), setButton(<></>)):(setMenuDD(<MenuDropdown />), setButton(<Buttons />)))
   }, [])
-  localStorage.removeItem('email')
 }
   return (
     <main>
@@ -30,6 +37,7 @@ if (process.browser) {
       <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-flat/96/Running-Shoe-Flat-icon.png" />
       <title>ShoesShooting</title>
       </Head>
+      <Cookies />
       <div className='d-flex justify-content-between '>
       {MenuDD}
       <Menu 
@@ -44,6 +52,12 @@ if (process.browser) {
       <div className="d-flex justify-content-evenly">
       <Carousel />
       </div>
+      <Gallery />
+      <Models />
+      <MoreSales />
+      <WantBeModel />
+      <Sponsors />
+      <Footer />
     </main>
   )
 }

@@ -2,7 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/login": "pages/login.js",
-  "/api/showData": "pages/api/showData.js"
+  "/library/allShoes": "pages/library/allShoes.js",
+  "/api/showData": "pages/api/showData.js",
+  "/api/shoes": "pages/api/shoes.js",
+  "/api/uploadImages": "pages/api/uploadImages.js",
+  "/settings/config": "pages/settings/config.js",
+  "/": "pages/index.js"
 }

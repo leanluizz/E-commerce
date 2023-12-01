@@ -55,7 +55,7 @@ export default function App() {
     <>
     
     <p className='text-center'><Link href='' className='bg-transparent border-0 text-light ' onClick={() => setModalShow(true)}>
-      Privacy policies
+    Políticas de privacidade
       </Link>
       </p>
       <MyVerticallyCenteredModal
